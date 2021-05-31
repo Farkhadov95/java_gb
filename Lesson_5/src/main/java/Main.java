@@ -8,7 +8,7 @@ public class Main {
                 800, 30);
         Employee employee3 = new Employee("Маша", "Маркетолог",
                 "cfo123@gmail.com","+111223355",
-                700, 25);
+                700, 58);
         Employee employee4 = new Employee("Саша", "Юрист",
                 "cfo123@gmail.com","+111223355",
                 600, 37);
@@ -28,10 +28,10 @@ public class Main {
 
     public static void findEmployee(Employee[] specificEmployee, int age) {
         for (int i = 0; i < specificEmployee.length; i++) {
-            if (specificEmployee[i].age > age) {
+            if (specificEmployee[i].getAge() > age) {
                 Employee.info(specificEmployee[i]);
             } else {
-                System.out.println("Сотрудник " + specificEmployee[i].name + " не соответствует критерию поиска");
+                System.out.println("Сотрудник " + specificEmployee[i].getName() + " не соответствует критерию поиска");
             }
         }
     }
