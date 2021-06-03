@@ -1,20 +1,32 @@
+import java.util.Locale;
+
 public class Animal {
+    String type;
     String name;
     int maxRun;
     int maxSwim;
     double maxJump;
 
-    public Animal(String name, int maxRun, int maxSwim, double maxJump) {
+    public Animal(String type, String name, int maxRun, int maxSwim, double maxJump) {
+        this.type = type.toLowerCase(Locale.ROOT);
         this.name = name;
         this.maxRun = maxRun;
         this.maxSwim = maxSwim;
         this.maxJump = maxJump;
+
+        if(type == "cat") {
+            System.out.println("Кличка кота/кошки: " + name);
+        } else if(type == "dog") {
+            System.out.println("Кличка собаки: " + name);
+        } else {
+            return;
+        }
+
+        System.out.println("Максимальная дальность бега: " + maxRun + " метров");
+        System.out.println("Максимальная дальность плавания: " + maxSwim + " метров");
+        System.out.println("Максимальная высота прыжка: " + maxJump + " метров");
     }
 
-
-    public void voice(String name) {
-        System.out.println(name + " залаяла");
-    }
 
     public void run(int distance){
         if((distance <= maxRun) && (distance >= 0)) {
